@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Free Fire",
+        "category": "Action",
+        "image": "assets/freefire.jpg",
+        "page": "games/freefire.html"
+    },
+    {
+        "name": "GTA San Andreas",
+        "category": "Action",
+        "image": "assets/gta.jpg",
+        "page": "games/gta.html"
+    },
+    {
+        "name": "PPSSPP God of War",
+        "category": "PPSSPP",
+        "image": "assets/gow.jpg",
+        "page": "games/gow.html"
+    },
+    {
+        "name": "Asphalt 8",
+        "category": "Racing",
+        "image": "assets/asphalt8.jpg",
+        "page": "games/asphalt8.html"
+    },
+    {
+        "name": "DLS 2024",
+        "category": "Football",
+        "image": "assets/dls.jpg",
+        "page": "games/dls2024.html"
+    }
+]
