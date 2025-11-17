@@ -1,94 +1,53 @@
-/* --- GENERAL PAGE STYLING --- */
+/* MAIN PAGE STYLE */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298); 
-    color: white;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #1e1e2f; /* Dark background */
+  color: white;
 }
 
-/* --- HEADER --- */
-header {
-    text-align: center;
-    padding: 25px;
-    background: rgba(0,0,0,0.2);
-    backdrop-filter: blur(6px);
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
 }
 
-header h1 {
-    font-size: 35px;
-    margin: 0;
+/* INPUT BOX */
+input {
+  width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+  outline: none;
 }
 
-/* --- SEARCH BAR --- */
-.search-box {
-    margin: 20px auto;
-    width: 90%;
-    max-width: 450px;
+/* BUTTON */
+button {
+  width: 90%;
+  padding: 12px;
+  background: #007bff;
+  border: none;
+  font-size: 17px;
+  color: white;
+  border-radius: 10px;
+  margin-top: 15px;
 }
 
-.search-box input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    font-size: 16px;
+/* RESULT BOX */
+.resultBox {
+  margin-top: 25px;
+  padding: 20px;
+  background: #222; 
+  border-radius: 12px;
 }
 
-/* --- GAME LIST --- */
-.game-container {
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
-    padding-bottom: 50px;
+/* RESULT TEXT (fixed — now WHITE and visible) */
+.resultText {
+  color: white !important;   /* makes text white */
+  font-size: 20px;
 }
-
-.game-card {
-    background: rgba(255,255,255,0.15);
-    margin: 12px 0;
-    padding: 15px;
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
-    transition: 0.3s;
-}
-
-.game-card:hover {
-    background: rgba(255,255,255,0.25);
-    transform: scale(1.02);
-}
-
-.game-card h2 {
-    margin: 0;
-    font-size: 22px;
-}
-
-.game-card p {
-    margin: 6px 0 12px;
-    font-size: 14px;
-}
-
-.game-card a {
-    padding: 8px 12px;
-    background: #ffce00;
-    color: black;
-    border-radius: 7px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.game-card a:hover {
-    background: white;
-}
-/* FORCE SEARCH RESULTS TO BE WHITE */
-#results a {
-    color: white !important;
-    font-weight: bold;
-    display: block;
-    padding: 10px;
-    border-radius: 6px;
-}
-
-#results a:hover {
-    color: #ffce00 !important;
-    background: rgba(255, 255, 255, 0.1);
-        }
