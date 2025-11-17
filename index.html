@@ -1,36 +1,37 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>RexPlayZone — Pro Gamer Search</title>
-  <meta name="description" content="RexPlayZone — find mobile game downloads, tutorials, and pro gameplay.">
-  <div class="search-container">
-  <input id="search" onkeyup="searchGame()" type="text" placeholder="Search games, downloads...">
-  <div id="results" class="results"></div>
-  </div>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RexPlayZone — Pro Gamer Search</title>
+    <meta name="description" content="RexPlayZone: Search and download all games — mobile, PC, PPSSPP, APK, and tutorials.">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="brand">
-        <div class="logo">RP</div>
-        <div>
-          <h1>RexPlayZone</h1>
-          <div class="lead">Professional gaming search — downloads, tutorials, and pro gameplay.</div>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="logo">RP</div>
+
+            <div>
+                <h1>RexPlayZone</h1>
+                <div class="lead">Professional gaming search — downloads, tutorials, and pro gameplay.</div>
+            </div>
+
+            <button class="btn" onclick="window.location.reload()">Refresh</button>
         </div>
-      </div>
-      <div>
-        <button class="btn" onclick="window.location.reload()">Refresh</button>
-      </div>
+
+        <!-- REAL WORKING SEARCH BAR -->
+        <div class="search-container">
+            <input id="search" placeholder="Search any game..." onkeyup="searchGame()" type="text">
+            <div id="results" class="results"></div>
+        </div>
+
     </div>
 
-    <div class="searchbar" style="margin-top:10px">
-      <input id="q" placeholder="Search games, e.g. 'racing', 'ppsspp', 'free fire'">
-      <button id="searchBtn" class="btn">Search</button>
-    </div>
-
-    <div class="filters" id="filters"></div>
-
-    <div 
+    <script src="script.js"></script>
+</body>
+              </html>
