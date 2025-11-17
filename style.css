@@ -79,3 +79,16 @@ header h1 {
 .game-card a:hover {
     background: white;
 }
+/* FORCE SEARCH RESULTS TO BE WHITE */
+#results a {
+    color: white !important;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#results a:hover {
+    color: #ffce00 !important;
+    background: rgba(255, 255, 255, 0.1);
+        }
