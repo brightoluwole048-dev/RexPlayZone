@@ -1,52 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RexPlayZone - Pro Gamer Search</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: #fff;
-            text-align: center;
-            padding: 40px;
-        }
-        .search-box {
-            width: 90%;
-            max-width: 500px;
-            padding: 12px;
-            border-radius: 30px;
-            border: none;
-            outline: none;
-        }
-        .btn {
-            padding: 12px 20px;
-            margin-top: 20px;
-            background: #00aaff;
-            border: none;
-            border-radius: 30px;
-            color: #fff;
-            font-size: 16px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RexPlayZone — Pro Gamer Search</title>
+  <meta name="description" content="RexPlayZone — find mobile game downloads, tutorials, and pro gameplay.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="logo">RP</div>
+        <div>
+          <h1>RexPlayZone</h1>
+          <div class="lead">Professional gaming search — downloads, tutorials, and pro gameplay.</div>
+        </div>
+      </div>
+      <div>
+        <button class="btn" onclick="window.location.reload()">Refresh</button>
+      </div>
+    </div>
 
-<h1>RexPlayZone</h1>
-<p>Search for pro gameplay, downloads, tutorials and more.</p>
+    <div class="searchbar" style="margin-top:10px">
+      <input id="q" placeholder="Search games, e.g. 'racing', 'ppsspp', 'free fire'">
+      <button id="searchBtn" class="btn">Search</button>
+    </div>
 
-<input type="text" id="searchInput" class="search-box" placeholder="Search games, downloads, tutorials...">
+    <div class="filters" id="filters"></div>
 
-<br>
-<button class="btn" onclick="search()">Search</button>
+    <div class="results" id="results"></div>
 
-<script>
-function search() {
-    let q = document.getElementById('searchInput').value;
-    window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(q + " mobile game download gameplay");
-}
-</script>
+    <div class="footer">RexPlayZone • Built with ❤️ • Purple neon theme</div>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
