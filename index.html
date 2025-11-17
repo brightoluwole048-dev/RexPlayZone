@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RexPlayZone - Pro Gamer Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+        }
+        .search-box {
+            width: 90%;
+            max-width: 500px;
+            padding: 12px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+        }
+        .btn {
+            padding: 12px 20px;
+            margin-top: 20px;
+            background: #00aaff;
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>RexPlayZone</h1>
+<p>Search for pro gameplay, downloads, tutorials and more.</p>
+
+<input type="text" id="searchInput" class="search-box" placeholder="Search games, downloads, tutorials...">
+
+<br>
+<button class="btn" onclick="search()">Search</button>
+
+<script>
+function search() {
+    let q = document.getElementById('searchInput').value;
+    window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(q + " mobile game download gameplay");
+}
+</script>
+
+</body>
+</html>
