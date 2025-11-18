@@ -1,77 +1,156 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RexPlayZone</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RexPlayZone — Free APKs</title>
+  <meta name="description" content="RexPlayZone — Download DLS, FIFA, Asphalt, GTA and many more APKs. Safe, organized and mobile-ready." />
+  <meta name="keywords" content="DLS, Dream League Soccer, APK, download, RexPlayZone, Asphalt, FIFA, GTA, eFootball">
+
+  <!-- AdSense (already added) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590879537304338"
+      crossorigin="anonymous"></script>
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0d0d0d;
-      color: #fff;
-    }header {
-  background: #111;
-  padding: 20px;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border-bottom: 2px solid #333;
-}
+    :root{
+      --bg:#0f1720;
+      --card:#0b1220;
+      --accent:#2bb6ff;
+      --muted:#9aa6b2;
+      --white:#fff;
+    }
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--white);background:linear-gradient(180deg,#071226 0%, #0f1720 100%);}
+    .wrap{width:94%;max-width:1000px;margin:28px auto;padding-bottom:60px;}
+    header{display:flex;align-items:center;gap:16px;justify-content:center;flex-direction:column}
+    .brand{font-size:36px;font-weight:700;letter-spacing:0.5px}
+    .lead{color:var(--muted);text-align:center;margin-top:6px;margin-bottom:18px}
+    .search {width:100%;display:flex;gap:10px;align-items:center;margin:0 auto 20px}
+    .search input{flex:1;padding:14px 16px;border-radius:10px;border:none;font-size:16px;background:#071e2a;color:var(--white);outline: none;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:12px;border-radius:12px;display:flex;flex-direction:column;align-items:stretch}
+    .thumb{width:100%;height:120px;border-radius:8px;object-fit:cover;background:#071a2a}
+    .title{margin-top:10px;font-weight:700;font-size:16px;color:var(--white)}
+    .desc{color:var(--muted);font-size:13px;margin:6px 0 12px}
+    .actions{display:flex;gap:10px;align-items:center}
+    .btn{flex:1;padding:10px 12px;border-radius:8px;text-align:center;text-decoration:none;font-weight:700;background:var(--accent);color:#04201f;display:inline-block}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)}
+    .no-results{background:rgba(255,255,255,0.03);padding:14px;border-radius:10px;color:var(--muted);text-align:center}
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
+    @media (max-width:480px){.thumb{height:140px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">RexPlayZone</div>
+      <div class="lead">Search and download APKs — DLS, FIFA, Asphalt, GTA, eFootball and more.</div>
+    </header>
 
-.game-container {
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-}
+    <div class="search">
+      <input id="q" placeholder="Search games (e.g. DLS, FIFA, Asphalt, GTA)..." oninput="searchGames()" />
+    </div>
 
-.game {
-  background: #1a1a1a;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
-  transition: 0.2s ease-in-out;
-}
+    <div id="results" class="grid" aria-live="polite"></div>
 
-.game:hover {
-  transform: scale(1.05);
-}
+    <div id="empty" class="no-results" style="display:none">No game found 😕</div>
 
-.game img {
-  width: 100%;
-  border-radius: 8px;
-}
+    <footer>
+      © <span id="year"></span> RexPlayZone — Use responsibly. Replace placeholders with your real APK links.
+    </footer>
+  </div>
 
-.game-title {
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
+  <script>
+    // ---------- GAMES LIST ----------
+    // Each game needs:
+    // name: visible name
+    // apk: URL to .apk (placeholder example uses repo path; replace with MediaFire/Mega or direct URLs)
+    // image: path to image in assets/ (upload the images)
+    // desc: short description
+    const games = [
+      { name: "DLS 2019",      apk: "assets/apks/dls2019.apk", image: "assets/dls2019.jpg", desc: "Dream League Soccer 2019 APK" },
+      { name: "DLS 2020",      apk: "assets/apks/dls2020.apk", image: "assets/dls2020.jpg", desc: "Dream League Soccer 2020 APK" },
+      { name: "DLS 2021",      apk: "assets/apks/dls2021.apk", image: "assets/dls2021.jpg", desc: "Dream League Soccer 2021 APK" },
+      { name: "DLS 2022",      apk: "assets/apks/dls2022.apk", image: "assets/dls2022.jpg", desc: "Dream League Soccer 2022 APK" },
+      { name: "DLS 2023",      apk: "assets/apks/dls2023.apk", image: "assets/dls2023.jpg", desc: "Dream League Soccer 2023 APK" },
+      { name: "DLS 2024",      apk: "assets/apks/dls2024.apk", image: "assets/dls2024.jpg", desc: "Dream League Soccer 2024 APK" },
+      { name: "DLS 2025",      apk: "assets/apks/dls2025.apk", image: "assets/dls2025.jpg", desc: "Dream League Soccer 2025 APK" },
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-  margin-top: 40px;
-  border-top: 2px solid #333;
-}
+      { name: "eFootball 2024",apk: "assets/apks/efb2024.apk", image: "assets/efb2024.jpg", desc: "eFootball 2024 APK" },
+      { name: "eFootball 2025",apk: "assets/apks/efb2025.apk", image: "assets/efb2025.jpg", desc: "eFootball 2025 APK" },
+      { name: "FIFA Mobile",   apk: "assets/apks/fifa.apk",    image: "assets/fifa.jpg",    desc: "FIFA Mobile APK" },
 
-  </style>  <!-- Google AdSense -->  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590879537304338" crossorigin="anonymous"></script></head>
-<body><header>RexPlayZone</header><section class="game-container">  <div class="game">
-    <img src="https://i.imgur.com/8Q1ZQZQ.png" alt="Game Image" />
-    <div class="game-title">Game 1</div>
-  </div>  <div class="game">
-    <img src="https://i.imgur.com/91b7mFq.png" alt="Game Image" />
-    <div class="game-title">Game 2</div>
-  </div>  <div class="game">
-    <img src="https://i.imgur.com/G3gMZb0.png" alt="Game Image" />
-    <div class="game-title">Game 3</div>
-  </div>  <div class="game">
-    <img src="https://i.imgur.com/dTyFmx1.png" alt="Game Image" />
-    <div class="game-title">Game 4</div>
-  </div></section><footer>
-  © 2025 RexPlayZone — More Games Coming Soon
-</footer></body>
-    </html>
+      { name: "Asphalt 8",     apk: "assets/apks/asphalt8.apk", image: "assets/asphalt8.jpg", desc: "Asphalt 8: Airborne" },
+      { name: "Asphalt 9",     apk: "assets/apks/asphalt9.apk", image: "assets/asphalt9.jpg", desc: "Asphalt 9: Legends" },
+      { name: "CSR Racing 2",  apk: "assets/apks/csr2.apk",     image: "assets/csr2.jpg",     desc: "CSR Racing 2 APK" },
+      { name: "Need for Speed NL", apk: "assets/apks/nfsnl.apk", image: "assets/nfsnl.jpg",    desc: "NFS: No Limits APK" },
+
+      { name: "GTA San Andreas", apk: "assets/apks/gta_sa.apk",  image: "assets/gta_sa.jpg",  desc: "GTA: San Andreas" },
+      { name: "GTA V Lite",     apk: "assets/apks/gta_v_lite.apk", image: "assets/gta_v.jpg", desc: "GTA V fan-made Lite" },
+
+      { name: "WWE 2K20",      apk: "assets/apks/wwe2k20.apk", image: "assets/wwe2k20.jpg", desc: "WWE 2K20 APK (for PPSSPP/ports)" },
+      { name: "WWE Mayhem",    apk: "assets/apks/wwe_mayhem.apk", image: "assets/wwe_mayhem.jpg", desc: "WWE Mayhem APK" },
+
+      { name: "Call of Duty Mobile", apk: "assets/apks/codm.apk", image: "assets/codm.jpg", desc: "COD Mobile APK" },
+      { name: "PUBG Mobile (Lite)",  apk: "assets/apks/pubglite.apk", image: "assets/pubglite.jpg", desc: "PUBG Lite / APK" },
+
+      // add more games in the same format
+    ];
+
+    // ---------- UI Rendering ----------
+    const resultsEl = document.getElementById('results');
+    const emptyEl = document.getElementById('empty');
+    const yearEl = document.getElementById('year');
+    yearEl.textContent = new Date().getFullYear();
+
+    function renderList(list) {
+      resultsEl.innerHTML = '';
+      if (!list || list.length === 0) {
+        emptyEl.style.display = 'block';
+        resultsEl.style.display = 'none';
+        return;
+      }
+      emptyEl.style.display = 'none';
+      resultsEl.style.display = 'grid';
+
+      list.forEach(game => {
+        const div = document.createElement('div');
+        div.className = 'card game-card';
+        div.innerHTML = `
+          <img class="thumb" src="${game.image}" alt="${escapeHtml(game.name)}">
+          <div class="title" style="margin-top:10px;font-weight:700">${escapeHtml(game.name)}</div>
+          <div class="desc">${escapeHtml(game.desc)}</div>
+          <div class="actions" style="margin-top:auto">
+            <a class="btn" href="${game.apk}" download>Download APK</a>
+            <a class="btn secondary" href="#" onclick="openInfo(event,'${escapeHtml(game.name)}')">Info</a>
+          </div>
+        `;
+        resultsEl.appendChild(div);
+      });
+    }
+
+    // initial show (all)
+    renderList(games);
+
+    // ---------- Search ----------
+    function searchGames(){
+      const q = document.getElementById('q').value.trim().toLowerCase();
+      if (!q) {
+        renderList(games);
+        return;
+      }
+      const matched = games.filter(g => g.name.toLowerCase().includes(q) || (g.desc && g.desc.toLowerCase().includes(q)));
+      renderList(matched);
+    }
+
+    // ---------- Small helpers ----------
+    function escapeHtml(s){
+      return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function openInfo(ev,name){
+      ev.preventDefault();
+      alert(name + '\\n\\nDownload button links to the APK (placeholder). Replace with your real links for users to download.');
+    }
+  </script>
+</body>
+  </html>
