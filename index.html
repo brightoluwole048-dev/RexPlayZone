@@ -1,58 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Rexonix Games – Free Game Download</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rexonix Games</title>
 
-    <!-- SEO -->
-    <meta name="description" content="Rexonix Games – Download DLS, PES, GTA, racing games and more. Fast and free mobile games.">
-    <meta name="keywords" content="Rexonix, game download, DLS, Dream League Soccer, PES, FIFA, GTA, offline games, APK, Rexonixgames">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590879537304338"
+  crossorigin="anonymous"></script>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590879537304338"
-        crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="style.css">
+    .container {
+      width: 92%;
+      max-width: 800px;
+      margin: auto;
+      padding-top: 20px;
+    }
+
+    .logo {
+      width: 150px;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .game-card {
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .game-card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .game-card a {
+      display: block;
+      margin-top: 8px;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-    <div class="container">
+    <!-- LOGO -->
+    <img src="logo.png" alt="Rexonix Logo" class="logo">
 
-        <div class="header">
-            <div class="logo">
-                <img src="logo.png" alt="Rexonix Games Logo">
-            </div>
+    <!-- TITLE -->
+    <h1>Rexonix Games</h1>
+    <p>Download free football, racing and action games.</p>
 
-            <div>
-                <h1>Rexonix Games</h1>
-                <div class="lead">Download free football, racing and action games.</div>
-            </div>
-        </div>
+    <!-- SEARCH -->
+    <input type="text" class="search-box" placeholder="Search games…">
 
-        <!-- Search Bar -->
-        <div class="search-container">
-            <input id="search" placeholder="Search games...">
-            <div id="results" class="results"></div>
-        </div>
+    <!-- GAMES BELOW -->
+    <div class="game-grid">
 
-        <!-- Add your ads later here -->
-        <!-- Example -->
-        <!-- <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-8590879537304338"
-             data-ad-slot="1234567890"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script> -->
+      <div class="game-card">
+        <img src="https://i.imgur.com/VU7X1Ic.jpeg" alt="DLS 2024">
+        <a href="#">Download DLS 2024</a>
+      </div>
+
+      <div class="game-card">
+        <img src="https://i.imgur.com/axK2YtH.jpeg" alt="FIFA Mobile">
+        <a href="#">Download FIFA Mobile</a>
+      </div>
+
+      <div class="game-card">
+        <img src="https://i.imgur.com/5kZ6oPM.jpeg" alt="Asphalt 9">
+        <a href="#">Download Asphalt 9</a>
+      </div>
+
+      <div class="game-card">
+        <img src="https://i.imgur.com/2o3cIY7.jpeg" alt="GTA SA Lite">
+        <a href="#">Download GTA SA Lite</a>
+      </div>
 
     </div>
-
-    <script src="script.js"></script>
+  </div>
 </body>
-</html>
+    </html>
