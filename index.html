@@ -1,116 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rexonix Games — Download Free Games</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RexPlayZone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+    }header {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #333;
+}
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
+.game-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 40px auto;
-        }
+.game {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  transition: 0.2s ease-in-out;
+}
 
-        h1 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
+.game:hover {
+  transform: scale(1.05);
+}
 
-        .lead {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: #555;
-        }
+.game img {
+  width: 100%;
+  border-radius: 8px;
+}
 
-        .search-box {
-            width: 100%;
-            padding: 12px 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
-            margin-bottom: 30px;
-        }
+.game-title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
 
-        .game-list {
-            list-style: none;
-            padding: 0;
-        }
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  margin-top: 40px;
+  border-top: 2px solid #333;
+}
 
-        .game-item {
-            background-color: #fff;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            transition: background 0.2s;
-        }
-
-        .game-item:hover {
-            background: #f1f1f1;
-        }
-
-        .game-item a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-        }
-
-        .game-item p {
-            margin: 5px 0 0 0;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Rexonix Games</h1>
-        <div class="lead">Download free football, racing, action and offline games.</div>
-
-        <input type="text" id="search" class="search-box" placeholder="Search games..." onkeyup="searchGame()" />
-
-        <ul id="results" class="game-list">
-            <li class="game-item"><a href="dls.html">Dream League Soccer (DLS)</a><p>Free download and mod</p></li>
-            <li class="game-item"><a href="fifa.html">FIFA Mobile</a><p>Latest version</p></li>
-            <li class="game-item"><a href="asphalt9.html">Asphalt 9</a><p>Racing game</p></li>
-            <li class="game-item"><a href="gta_sa.html">GTA SA Lite</a><p>Open world</p></li>
-        </ul>
-    </div>
-
-    <script>
-        const games = [
-            { name: "Dream League Soccer", file: "dls.html", description: "Free download and mod" },
-            { name: "FIFA Mobile", file: "fifa.html", description: "Latest version" },
-            { name: "Asphalt 9", file: "asphalt9.html", description: "Racing game" },
-            { name: "GTA SA Lite", file: "gta_sa.html", description: "Open world" }
-        ];
-
-        function searchGame() {
-            const input = document.getElementById("search").value.toLowerCase();
-            const results = document.getElementById("results");
-            results.innerHTML = "";
-
-            const matched = games.filter(g => g.name.toLowerCase().includes(input));
-
-            if (matched.length === 0) {
-                results.innerHTML = `<li class="game-item">No game found 😕</li>`;
-            } else {
-                matched.forEach(game => {
-                    results.innerHTML += `<li class="game-item"><a href="${game.file}">${game.name}</a><p>${game.description}</p></li>`;
-                });
-            }
-        }
-    </script>
-</body>
-</html>
+  </style>  <!-- Google AdSense -->  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590879537304338" crossorigin="anonymous"></script></head>
+<body><header>RexPlayZone</header><section class="game-container">  <div class="game">
+    <img src="https://i.imgur.com/8Q1ZQZQ.png" alt="Game Image" />
+    <div class="game-title">Game 1</div>
+  </div>  <div class="game">
+    <img src="https://i.imgur.com/91b7mFq.png" alt="Game Image" />
+    <div class="game-title">Game 2</div>
+  </div>  <div class="game">
+    <img src="https://i.imgur.com/G3gMZb0.png" alt="Game Image" />
+    <div class="game-title">Game 3</div>
+  </div>  <div class="game">
+    <img src="https://i.imgur.com/dTyFmx1.png" alt="Game Image" />
+    <div class="game-title">Game 4</div>
+  </div></section><footer>
+  © 2025 RexPlayZone — More Games Coming Soon
+</footer></body>
+    </html>
