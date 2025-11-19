@@ -7,9 +7,9 @@
   <meta name="description" content="Rexonix — safe download hub linking to APKPure for Dream League Soccer, eFootball/PES, FIFA, Asphalt, GTA and more." />
   <meta name="keywords" content="Rexonix, DLS download, Dream League Soccer, eFootball, PES, FIFA, Asphalt, GTA, APKPure" />
 
-  <!-- Optional AdSense (if you have account) -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
-      crossorigin="anonymous"></script> -->
+  <!-- AdSense global script (your publisher ID) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590879537304338"
+      crossorigin="anonymous"></script>
 
   <style>
     :root{
@@ -86,6 +86,18 @@
       <input id="q" placeholder="Search games, e.g. dls 2025, fifa 16, asphalt 9, gta sa" />
       <button id="clearBtn">Clear</button>
     </div>
+
+    <!-- ====== AD (MIDDLE) ====== -->
+    <div style="margin:18px 0; text-align:center;">
+      <ins class="adsbygoogle"
+           style="display:block; margin:0 auto;"
+           data-ad-client="ca-pub-8590879537304338"
+           data-ad-slot="3494011151"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    <!-- ====== END AD ====== -->
 
     <!-- SERIES: BIG GRID (DLS, eFootball, FIFA, Asphalt, GTA) -->
     <div id="content"></div>
@@ -215,87 +227,4 @@
               <img src="${g.thumb || ''}" alt="${g.title}" onerror="this.style.display='none'">
               <div class="info">
                 <div class="name">${g.title}</div>
-                <div class="meta">${g.series} • ${g.year || ''}</div>
-              </div>
-              <div class="dl"><a class="btn-download" href="${g.link || '#'}" target="_blank" rel="noopener noreferrer">Download</a></div>
-            `;
-            listEl.appendChild(div);
-          });
-          sec.appendChild(listEl);
-        }
-
-        content.appendChild(sec);
-      }
-    }
-
-    // initial render
-    renderAll(data);
-
-    // search
-    q.addEventListener('input', ()=>{
-      const v = q.value.trim().toLowerCase();
-      if(!v){ renderAll(data); return; }
-      const parts = v.split(/\s+/).filter(Boolean);
-      const matched = data.filter(g=>{
-        const text = (g.title + ' ' + g.series + ' ' + (g.year||'')).toLowerCase();
-        return parts.every(p => text.includes(p));
-      });
-      if(matched.length===0){ content.innerHTML=''; noneBox.style.display='block'; return; }
-      noneBox.style.display='none';
-      // render grouped matched
-      const grouped = [];
-      for(const s of seriesOrder){
-        const items = matched.filter(g => g.series === s);
-        if(items.length>0) grouped.push({series:s, items});
-      }
-      content.innerHTML='';
-      for(const group of grouped){
-        const sec = document.createElement('div'); sec.className='series-section';
-        const h = document.createElement('div'); h.className='series-title';
-        h.innerHTML = `<strong>${group.series}</strong> <span class="series-sub">(${group.items.length})</span>`;
-        sec.appendChild(h);
-        if(['DLS','eFootball','FIFA','Asphalt','GTA'].includes(group.series)){
-          const grid = document.createElement('div'); grid.className='grid';
-          group.items.forEach(g=>{
-            const a = document.createElement('a'); a.className='card';
-            a.href = g.link || '#'; a.target='_blank'; a.rel='noopener noreferrer';
-            a.innerHTML = `
-              <div class="thumb">
-                ${ g.thumb ? `<img src="${g.thumb}" alt="${g.title}" onerror="this.style.display='none'">` : '' }
-                <div style="position:absolute">${ initialsFromTitle(g.title) }</div>
-              </div>
-              <div class="meta">
-                <div class="title">${g.title}</div>
-                <div class="sub">${g.series} • ${g.year || ''}</div>
-                <a class="btn-download" href="${g.link || '#'}" target="_blank" rel="noopener noreferrer">Download (APKPure)</a>
-              </div>
-            `;
-            grid.appendChild(a);
-          });
-          sec.appendChild(grid);
-        } else {
-          const listEl = document.createElement('div'); listEl.className='list';
-          group.items.forEach(g=>{
-            const div = document.createElement('div'); div.className='list-item';
-            div.innerHTML = `
-              <img src="${g.thumb || ''}" alt="${g.title}" onerror="this.style.display='none'">
-              <div class="info">
-                <div class="name">${g.title}</div>
-                <div class="meta">${g.series} • ${g.year || ''}</div>
-              </div>
-              <div class="dl"><a class="btn-download" href="${g.link || '#'}" target="_blank" rel="noopener noreferrer">Download</a></div>
-            `;
-            listEl.appendChild(div);
-          });
-          sec.appendChild(listEl);
-        }
-        content.appendChild(sec);
-      }
-    });
-
-    clearBtn.addEventListener('click', ()=>{
-      q.value=''; renderAll(data);
-    });
-  </script>
-</body>
-    </html>
+             0
