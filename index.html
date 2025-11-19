@@ -1,230 +1,191 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rexonix — Download Hub (DLS, eFootball, FIFA, Asphalt, GTA)</title>
-  <meta name="description" content="Rexonix — safe download hub linking to APKPure for Dream League Soccer, eFootball/PES, FIFA, Asphalt, GTA and more." />
-  <meta name="keywords" content="Rexonix, DLS download, Dream League Soccer, eFootball, PES, FIFA, Asphalt, GTA, APKPure" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RexPlayZone – Download Games</title>
 
-  <!-- AdSense global script (your publisher ID) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590879537304338"
-      crossorigin="anonymous"></script>
-
-  <style>
-    :root{
-      --bg1:#0d47a1; --bg2:#1976d2; --card: rgba(255,255,255,0.06);
-      --muted:#cfe8ff; --accent:#ffd54f;
-      --maxwidth:1100px;
+<style>
+    body {
+        background: #0b1f3a;
+        color: white;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        margin: 0;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;font-family:Inter, system-ui, Arial, sans-serif;
-      background: linear-gradient(160deg,var(--bg1),var(--bg2));
-      color: #fff; -webkit-font-smoothing:antialiased;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 25px;
     }
-    .wrap{max-width:var(--maxwidth);margin:18px auto;padding:18px}
-    header{display:flex;align-items:center;gap:14px}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#6b46c1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;box-shadow:0 8px 30px rgba(0,0,0,0.25)}
-    h1{margin:0;font-size:22px}
-    .lead{color:var(--muted);font-size:13px;margin-top:6px}
 
-    /* search */
-    .searchbar{margin-top:16px;display:flex;gap:10px;align-items:center}
-    .searchbar input{
-      flex:1;padding:12px 14px;border-radius:10px;border:0;background:rgba(255,255,255,0.06);color:inherit;font-size:15px}
-    .searchbar button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#000;font-weight:700;cursor:pointer}
-
-    /* section titles */
-    .series-section{margin-top:20px}
-    .series-title{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-    .series-title strong{font-size:18px}
-    .series-sub{color:var(--muted);font-size:13px}
-
-    /* grid */
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
-    .card{
-      background:var(--card);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:10px;align-items:stretch;
-      transition:transform .14s ease, box-shadow .14s ease; cursor:pointer; text-decoration:none;color:inherit;
+    /* GRID LAYOUT */
+    .game-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
     }
-    .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.35)}
-    .thumb{
-      width:100%;aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(0,0,0,0.06));
-      display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:var(--muted);position:relative;
+
+    .game {
+        background: #11284e;
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform .2s;
     }
-    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-    .meta{display:flex;flex-direction:column;gap:6px}
-    .title{font-size:14px;margin:0;color:#fff}
-    .sub{font-size:12px;color:var(--muted);margin-top:auto}
-    .btn-download{display:inline-block;margin-top:6px;padding:8px 10px;border-radius:8px;background:var(--accent);color:#000;font-weight:700;text-decoration:none;text-align:center}
 
-    /* list style for small games */
-    .list{margin-top:12px;display:flex;flex-direction:column;gap:10px}
-    .list-item{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;background:rgba(255,255,255,0.04)}
-    .list-item img{width:56px;height:56px;object-fit:cover;border-radius:8px}
-    .list-item .info{flex:1}
-    .list-item .info .name{font-weight:700}
-    .list-item .info .meta{color:var(--muted);font-size:13px;margin-top:6px}
-    .list-item .dl{margin-left:8px}
+    .game:hover {
+        transform: scale(1.04);
+    }
 
-    .footer{margin-top:22px;text-align:center;color:rgba(255,255,255,0.65);font-size:13px}
-    .noresults{padding:24px;border-radius:10px;background:rgba(0,0,0,0.18);text-align:center;color:#fff}
-    @media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
-  </style>
+    .game img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .game a {
+        display: block;
+        background: white;
+        color: #0b1f3a;
+        padding: 10px;
+        margin-top: 10px;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .game a:hover {
+        background: #d0d6ff;
+    }
+
+    /* AD SECTION */
+    .ad-box {
+        margin-top: 35px;
+        background: #061324;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+    }
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">RX</div>
-      <div>
-        <h1>Rexonix</h1>
-        <div class="lead">Safe download hub — links to official APK pages (APKPure) for many games. No illegal files.</div>
-      </div>
-    </header>
 
-    <div class="searchbar" style="margin-bottom:6px;">
-      <input id="q" placeholder="Search games, e.g. dls 2025, fifa 16, asphalt 9, gta sa" />
-      <button id="clearBtn">Clear</button>
+<h1>RexPlayZone – Download Your Favorite Games</h1>
+
+<!-- GRID GAME LIST -->
+<div class="game-grid">
+
+    <!-- DLS 2025 -->
+    <div class="game">
+        <img src="https://i.postimg.cc/mkZwXWmB/dls25.jpg">
+        <h3>DLS 2025</h3>
+        <a href="https://rexdl.com/android/dream-league-soccer-2025.html">Download</a>
     </div>
 
-    <!-- ====== AD (MIDDLE) ====== -->
-    <div style="margin:18px 0; text-align:center;">
-      <ins class="adsbygoogle"
-           style="display:block; margin:0 auto;"
-           data-ad-client="ca-pub-8590879537304338"
-           data-ad-slot="3494011151"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-    </div>
-    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-    <!-- ====== END AD ====== -->
-
-    <!-- SERIES: BIG GRID (DLS, eFootball, FIFA, Asphalt, GTA) -->
-    <div id="content"></div>
-
-    <div id="none" class="noresults" style="display:none;margin-top:14px">
-      No games found — try another keyword.
+    <!-- DLS 2024 -->
+    <div class="game">
+        <img src="https://i.postimg.cc/2yqqXnCy/dls24.jpg">
+        <h3>DLS 2024</h3>
+        <a href="https://rexdl.com/android/dream-league-soccer-2024.html">Download</a>
     </div>
 
-    <div class="footer">Rexonix • Links point to APKPure where available • Replace any placeholder links if needed</div>
-  </div>
+    <!-- DLS 2023 -->
+    <div class="game">
+        <img src="https://i.postimg.cc/3N2Hb1HH/dls23.jpg">
+        <h3>DLS 2023</h3>
+        <a href="https://rexdl.com/android/dream-league-soccer-2023.html">Download</a>
+    </div>
 
-  <script>
-    /* ===== DATA =====
-       Each entry { id, title, series, year, thumb, link }
-       Links use APKPure or official pages. Replace any '#' with your preferred URL.
-    */
-    const data = [
-      // DLS (2011 - 2025) : use official APKPure DLS page (same package) for modern years
-      {id:'dls2025', title:'Dream League Soccer 2025', series:'DLS', year:2025, thumb:'', link:'https://apkpure.com/dream-league-soccer-2025/com.firsttouchgames.dls7'},
-      {id:'dls2024', title:'Dream League Soccer 2024', series:'DLS', year:2024, thumb:'', link:'https://apkpure.com/dream-league-soccer-2024/com.firsttouchgames.dls7'},
-      {id:'dls2023', title:'Dream League Soccer 2023', series:'DLS', year:2023, thumb:'', link:'https://apkpure.com/dream-league-soccer-2023/com.firsttouchgames.dls7'},
-      {id:'dls2022', title:'Dream League Soccer 2022', series:'DLS', year:2022, thumb:'', link:'https://apkpure.com/dream-league-soccer-2022/com.firsttouchgames.dls7'},
-      {id:'dls2021', title:'Dream League Soccer 2021', series:'DLS', year:2021, thumb:'', link:'https://apkpure.com/dream-league-soccer-2021/com.firsttouchgames.dls7'},
-      {id:'dls2020', title:'Dream League Soccer 2020', series:'DLS', year:2020, thumb:'', link:'https://apkpure.com/dream-league-soccer-2020/com.firsttouchgames.dls7'},
-      {id:'dls2019', title:'Dream League Soccer 2019', series:'DLS', year:2019, thumb:'', link:'https://apkpure.com/dream-league-soccer-2019/com.firsttouchgames.dls7'},
-      {id:'dls2018', title:'Dream League Soccer 2018', series:'DLS', year:2018, thumb:'', link:'https://apkpure.com/dream-league-soccer-2018/com.firsttouchgames.dls7'},
-      {id:'dls2017', title:'Dream League Soccer 2017', series:'DLS', year:2017, thumb:'', link:'https://apkpure.com/dream-league-soccer-2017/com.firsttouchgames.dls7'},
-      {id:'dls2016', title:'Dream League Soccer 2016', series:'DLS', year:2016, thumb:'', link:'https://apkpure.com/dream-league-soccer-2016/com.firsttouchgames.dls7'},
-      {id:'dls2015', title:'Dream League Soccer 2015', series:'DLS', year:2015, thumb:'', link:'#'},
-      {id:'dls2014', title:'Dream League Soccer 2014', series:'DLS', year:2014, thumb:'', link:'#'},
-      {id:'dls2013', title:'Dream League Soccer 2013', series:'DLS', year:2013, thumb:'', link:'#'},
-      {id:'dls2012', title:'Dream League Soccer 2012', series:'DLS', year:2012, thumb:'', link:'#'},
-      {id:'dls2011', title:'Dream League Soccer 2011', series:'DLS', year:2011, thumb:'', link:'#'},
+    <!-- eFootball 2025 -->
+    <div class="game">
+        <img src="https://i.postimg.cc/4yny1pJk/ef25.jpg">
+        <h3>eFootball 2025</h3>
+        <a href="https://apkcombo.com/efootball/com.konami.efootball/">Download</a>
+    </div>
 
-      // eFootball / PES
-      {id:'efootball2025', title:'eFootball 2025 (PES)', series:'eFootball', year:2025, thumb:'', link:'https://apkpure.com/efootball™-2025/jp.konami.efootball2'},
-      {id:'efootball2024', title:'eFootball 2024 (PES)', series:'eFootball', year:2024, thumb:'', link:'https://apkpure.com/efootball™-2024/jp.konami.efootball2'},
-      {id:'efootball2023', title:'eFootball 2023 (PES)', series:'eFootball', year:2023, thumb:'', link:'https://apkpure.com/efootball™-2023/jp.konami.efootball2'},
-      {id:'pes2021', title:'PES 2021', series:'eFootball', year:2021, thumb:'', link:'https://apkpure.com/pes-2021/jp.konami.pesam'},
+    <!-- eFootball 2024 -->
+    <div class="game">
+        <img src="https://i.postimg.cc/YSV1NFkT/ef24.jpg">
+        <h3>eFootball 2024</h3>
+        <a href="https://apkcombo.com/efootball-2024/com.konami.efootball/">Download</a>
+    </div>
 
-      // FIFA
-      {id:'fifamobile', title:'FIFA Mobile (Seasonal)', series:'FIFA', year:2024, thumb:'', link:'https://apkpure.com/fifa-mobile-soccer/com.ea.gp.fifamobile'},
-      {id:'fifa23', title:'FIFA 23 (mobile pages)', series:'FIFA', year:2023, thumb:'', link:'#'},
+    <!-- Asphalt 9 -->
+    <div class="game">
+        <img src="https://i.postimg.cc/ZYmt2wcY/as9.jpg">
+        <h3>Asphalt 9</h3>
+        <a href="https://rexdl.com/android/asphalt-9-legends.html">Download</a>
+    </div>
 
-      // Asphalt
-      {id:'asphalt9', title:'Asphalt 9: Legends', series:'Asphalt', year:2018, thumb:'', link:'https://apkpure.com/asphalt-9-legends/com.gameloft.android.ANMP.GloftA9HM'},
-      {id:'asphalt8', title:'Asphalt 8: Airborne', series:'Asphalt', year:2013, thumb:'', link:'https://apkpure.com/asphalt-8-airborne/com.gameloft.android.ANMP.GloftA8HM'},
+    <!-- Asphalt 8 -->
+    <div class="game">
+        <img src="https://i.postimg.cc/hPk7y7pN/as8.jpg">
+        <h3>Asphalt 8</h3>
+        <a href="https://rexdl.com/android/asphalt-8-airborne.html">Download</a>
+    </div>
 
-      // GTA (official Rockstar mobile / legacy)
-      {id:'gta_sa', title:'GTA: San Andreas', series:'GTA', year:2013, thumb:'', link:'https://apkpure.com/grand-theft-auto-san-andreas/com.rockstargames.gtasa'},
-      {id:'gta_vc', title:'GTA: Vice City', series:'GTA', year:2002, thumb:'', link:'https://apkpure.com/grand-theft-auto-vice-city/com.rockstargames.gtavc'},
-      {id:'gta3', title:'GTA III', series:'GTA', year:2001, thumb:'', link:'https://apkpure.com/grand-theft-auto-iii/com.rockstar.gta3'},
-      {id:'gta_iv', title:'GTA IV (official pages vary)', series:'GTA', year:2008, thumb:'', link:'#'},
+    <!-- GTA 5 Mobile -->
+    <div class="game">
+        <img src="https://i.postimg.cc/GhtJczVh/gta5.jpg">
+        <h3>GTA 5 Mobile</h3>
+        <a href="https://apkaward.com/gta-5-mobile">Download</a>
+    </div>
 
-      // Shooters & others (APKPure official pages where available)
-      {id:'codm', title:'Call of Duty: Mobile', series:'Shooter', year:2019, thumb:'', link:'https://apkpure.com/call-of-duty-mobile/com.activision.callofduty.shooter'},
-      {id:'pubg', title:'PUBG Mobile', series:'Shooter', year:2018, thumb:'', link:'https://apkpure.com/pubg-mobile/com.tencent.ig'},
-      {id:'freefire', title:'Free Fire', series:'Shooter', year:2017, thumb:'', link:'https://apkpure.com/free-fire/com.dts.freefireth'},
-      {id:'criticalops', title:'Critical Ops', series:'Shooter', year:2015, thumb:'', link:'https://apkpure.com/critical-ops/com.criticalforceentertainment.criticalops'},
+    <!-- GTA San Andreas -->
+    <div class="game">
+        <img src="https://i.postimg.cc/pTw0V7SK/san.jpg">
+        <h3>GTA San Andreas</h3>
+        <a href="https://rexdl.com/android/gta-san-andreas.html">Download</a>
+    </div>
 
-      // Emulators & popular
-      {id:'ppsspp', title:'PPSSPP Emulator', series:'Emulator', year:2015, thumb:'', link:'https://apkpure.com/ppsspp/org.ppsspp.ppsspp'},
-      {id:'minecraft', title:'Minecraft (official)', series:'Other', year:2011, thumb:'', link:'https://apkpure.com/minecraft/com.mojang.minecraftpe'},
-      {id:'roblox', title:'Roblox', series:'Other', year:2006, thumb:'', link:'https://apkpure.com/roblox/com.roblox.client'}
-    ];
+    <!-- GTA Vice City -->
+    <div class="game">
+        <img src="https://i.postimg.cc/xjMr40vL/vc.jpg">
+        <h3>GTA Vice City</h3>
+        <a href="https://rexdl.com/android/gta-vice-city.html">Download</a>
+    </div>
 
-    const seriesOrder = ['DLS','eFootball','FIFA','Asphalt','GTA','Shooter','Emulator','Other'];
+    <!-- CODM -->
+    <div class="game">
+        <img src="https://i.postimg.cc/MZFDLbJf/codm.jpg">
+        <h3>Call of Duty Mobile</h3>
+        <a href="https://apkcombo.com/call-of-duty-mobile/com.activision.callofduty.shooter/">Download</a>
+    </div>
 
-    const content = document.getElementById('content');
-    const q = document.getElementById('q');
-    const noneBox = document.getElementById('none');
-    const clearBtn = document.getElementById('clearBtn');
+    <!-- Free Fire -->
+    <div class="game">
+        <img src="https://i.postimg.cc/25nWkT8k/ff.jpg">
+        <h3>Free Fire</h3>
+        <a href="https://apkcombo.com/free-fire/com.dts.freefireth/">Download</a>
+    </div>
 
-    function initialsFromTitle(t){
-      return t.split(' ').map(s=>s[0]).slice(0,2).join('').toUpperCase();
-    }
+    <!-- Minecraft PE -->
+    <div class="game">
+        <img src="https://i.postimg.cc/hjMqS3qG/mc.jpg">
+        <h3>Minecraft PE</h3>
+        <a href="https://mcpe-planet.com/en/downloads/minecraft-pe-1-20/">Download</a>
+    </div>
 
-    function renderAll(list){
-      content.innerHTML = '';
-      if(!list || list.length===0){ noneBox.style.display='block'; return; }
-      noneBox.style.display='none';
+</div>
 
-      for(const series of seriesOrder){
-        const items = list.filter(g => g.series === series);
-        if(items.length===0) continue;
+<!-- BOTTOM ADS (nothing touched above) -->
+<div class="ad-box">
+    <p>ADVERTISEMENT</p>
 
-        // section header
-        const sec = document.createElement('div');
-        sec.className = 'series-section';
-        const h = document.createElement('div');
-        h.className = 'series-title';
-        h.innerHTML = `<strong>${series}</strong> <span class="series-sub">(${items.length})</span>`;
-        sec.appendChild(h);
+    <!-- Put your ad banner here -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-0000000000000000"
+        data-ad-slot="0000000000"
+        data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
-        // for main series (DLS, eFootball, FIFA, Asphalt, GTA) use grid
-        if(['DLS','eFootball','FIFA','Asphalt','GTA'].includes(series)){
-          const grid = document.createElement('div');
-          grid.className = 'grid';
-          items.forEach(g => {
-            const a = document.createElement('a');
-            a.className = 'card';
-            a.href = g.link || '#';
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            a.innerHTML = `
-              <div class="thumb">
-                ${ g.thumb ? `<img src="${g.thumb}" alt="${g.title}" onerror="this.style.display='none'">` : '' }
-                <div style="position:absolute">${ initialsFromTitle(g.title) }</div>
-              </div>
-              <div class="meta">
-                <div class="title">${g.title}</div>
-                <div class="sub">${g.series} • ${g.year || ''}</div>
-                <a class="btn-download" href="${g.link || '#'}" target="_blank" rel="noopener noreferrer">Download (APKPure)</a>
-              </div>
-            `;
-            grid.appendChild(a);
-          });
-          sec.appendChild(grid);
-        } else {
-          // smaller series: list view
-          const listEl = document.createElement('div');
-          listEl.className = 'list';
-          items.forEach(g=>{
-            const div = document.createElement('div');
-            div.className = 'list-item';
-            div.innerHTML = `
-              <img src="${g.thumb || ''}" alt="${g.title}" onerror="this.style.display='none'">
-              <div class="info">
-                <div class="name">${g.title}</div>
-             0
+</div>
+
+</body>
+      </html>
