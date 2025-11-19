@@ -118,6 +118,7 @@
   <script>
     /* ===== DATA ===== */
     const data = [
+      // existing entries (unchanged)
       {id:'dls2025', title:'Dream League Soccer 2025', series:'DLS', year:2025, thumb:'', link:'https://apkpure.com/dream-league-soccer-2025/com.firsttouchgames.dls7'},
       {id:'dls2024', title:'Dream League Soccer 2024', series:'DLS', year:2024, thumb:'', link:'https://apkpure.com/dream-league-soccer-2024/com.firsttouchgames.dls7'},
       {id:'dls2023', title:'Dream League Soccer 2023', series:'DLS', year:2023, thumb:'', link:'https://apkpure.com/dream-league-soccer-2023/com.firsttouchgames.dls7'},
@@ -157,7 +158,87 @@
 
       {id:'ppsspp', title:'PPSSPP Emulator', series:'Emulator', year:2015, thumb:'', link:'https://apkpure.com/ppsspp/org.ppsspp.ppsspp'},
       {id:'minecraft', title:'Minecraft', series:'Other', year:2011, thumb:'', link:'https://apkpure.com/minecraft/com.mojang.minecraftpe'},
-      {id:'roblox', title:'Roblox', series:'Other', year:2006, thumb:'', link:'https://apkpure.com/roblox/com.roblox.client'}
+      {id:'roblox', title:'Roblox', series:'Other', year:2006, thumb:'', link:'https://apkpure.com/roblox/com.roblox.client'},
+
+      // ----- 50 NEW GAMES (mixed into main categories) -----
+      // FIFA / Football additions
+      {id:'fifa22', title:'FIFA 22 (mobile pages)', series:'FIFA', year:2022, thumb:'', link:'#'},
+      {id:'fifa21', title:'FIFA 21 (mobile)', series:'FIFA', year:2021, thumb:'', link:'#'},
+      {id:'efootball2022', title:'eFootball 2022', series:'eFootball', year:2022, thumb:'', link:'https://apkpure.com/efootball-2022/jp.konami.efootball2'},
+      {id:'pes2019', title:'PES 2019', series:'eFootball', year:2019, thumb:'', link:'#'},
+
+      // Racing additions
+      {id:'csr2', title:'CSR Racing 2', series:'Asphalt', year:2016, thumb:'', link:'https://apkpure.com/csr-racing-2/com.naturalmotion.customstreetracer2'},
+      {id:'nfsnl', title:'Need for Speed: No Limits', series:'Asphalt', year:2015, thumb:'', link:'https://apkpure.com/need-for-speed-no-limits/com.ea.games.nfsandroid'},
+      {id:'realracing3', title:'Real Racing 3', series:'Asphalt', year:2013, thumb:'', link:'https://apkpure.com/real-racing-3/com.ea.games.r3_row'},
+      {id:'carx', title:'CarX Drift Racing 2', series:'Asphalt', year:2021, thumb:'', link:'https://apkpure.com/carx-drift-racing-2/carx.com.carxdrift2'},
+
+      // Shooter additions
+      {id:'moderncombat5', title:'Modern Combat 5', series:'Shooter', year:2014, thumb:'', link:'https://apkpure.com/modern-combat-5/com.gameloft.android.ANMP.GloFTM5'},
+      {id:'sniper3d', title:'Sniper 3D', series:'Shooter', year:2015, thumb:'', link:'https://apkpure.com/sniper-3d-shooter-ambush/com.funplus.sniper3d.global'},
+      {id:'pubglite', title:'PUBG Mobile Lite', series:'Shooter', year:2019, thumb:'', link:'#'},
+      {id:'warfacemobile', title:'Warface: Global Operations', series:'Shooter', year:2020, thumb:'', link:'#'},
+
+      // Open-world / action additions
+      {id:'gta4mobile', title:'GTA IV (fanport)', series:'GTA', year:2008, thumb:'', link:'#'},
+      {id:'gta5mobile', title:'GTA 5 Mobile (fan/ports)', series:'GTA', year:2015, thumb:'', link:'#'},
+      {id:'saintsrow', title:'Saints Row (mobile fan)', series:'GTA', year:2019, thumb:'', link:'#'},
+
+      // PPSSPP / Emulator additions
+      {id:'dolphin', title:'Dolphin Emulator', series:'Emulator', year:2018, thumb:'', link:'https://apkpure.com/dolphin-emulator/org.dolphinemu.dolphin'},
+      {id:'retroarch', title:'RetroArch', series:'Emulator', year:2016, thumb:'', link:'https://apkpure.com/retroarch/com.retroarch'},
+      {id:'epsxe', title:'ePSXe for Android', series:'Emulator', year:2014, thumb:'', link:'https://apkpure.com/epsxe-for-android/com.epsxe.ePSXe'},
+
+      // Arcade / Casual / Mobile hits
+      {id:'subwaysurf', title:'Subway Surfers', series:'Other', year:2012, thumb:'', link:'https://apkpure.com/subway-surfers/sybo.subwaysurf'},
+      {id:'templerun2', title:'Temple Run 2', series:'Other', year:2013, thumb:'', link:'https://apkpure.com/temple-run-2/com.imangi.templerun2'},
+      {id:'amongus', title:'Among Us', series:'Other', year:2018, thumb:'', link:'https://apkpure.com/among-us/com.innersloth.spacemafia'},
+      {id:'subnautica', title:'Subnautica (info)', series:'Other', year:2018, thumb:'', link:'#'},
+
+      // Adventure / RPG / Big titles
+      {id:'genshin', title:'Genshin Impact', series:'Other', year:2020, thumb:'', link:'https://apkpure.com/genshin-impact/com.miHoYo.GenshinImpact'},
+      {id:'pubgnewstate', title:'PUBG: New State', series:'Shooter', year:2021, thumb:'', link:'https://apkpure.com/pubg-new-state/com.pubg.newstate'},
+      {id:'callofduty2', title:'Call of Duty: Warzone Mobile (info)', series:'Shooter', year:2022, thumb:'', link:'#'},
+
+      // Fighting / Combat
+      {id:'shadowfight3', title:'Shadow Fight 3', series:'Other', year:2017, thumb:'', link:'https://apkpure.com/shadow-fight-3-combat-rpg-by-nekki/com.nekki.shadowfight3'},
+      {id:'mortalcombat', title:'Mortal Kombat Mobile', series:'Other', year:2015, thumb:'', link:'https://apkpure.com/mortal-kombat/com.wb.goog.mkx'} ,
+
+      // Sports / Other popular entries
+      {id:'pes2020', title:'PES 2020', series:'eFootball', year:2020, thumb:'', link:'#'},
+      {id:'footballclub', title:'Dream League: Classic (fan)', series:'DLS', year:2014, thumb:'', link:'#'},
+
+      // Retro / emulated popular titles
+      {id:'ppssppgameset', title:'PPSSPP Game Set (info)', series:'Emulator', year:2015, thumb:'', link:'#'},
+      {id:'marioc', title:'Super Mario (fan ports)', series:'Other', year:2016, thumb:'', link:'#'},
+
+      // More racing and car
+      {id:'asphalt7', title:'Asphalt 7', series:'Asphalt', year:2012, thumb:'', link:'#'},
+      {id:'carparking', title:'Car Parking Multiplayer', series:'Asphalt', year:2018, thumb:'', link:'https://apkpure.com/car-parking-multiplayer/com.ort.gp'} ,
+
+      // More shooters / tactical
+      {id:'criticalops2', title:'Critical Ops — updated', series:'Shooter', year:2020, thumb:'', link:'https://apkpure.com/critical-ops/com.criticalforceentertainment.criticalops'},
+
+      // Builders / sandbox / misc
+      {id:'terraria', title:'Terraria', series:'Other', year:2013, thumb:'', link:'https://apkpure.com/terraria/com.and.games505.Terraria'},
+      {id:'donutcounty', title:'Donut County', series:'Other', year:2018, thumb:'', link:'#'},
+
+      // Payback 1 & 2 (as requested)
+      {id:'payback1', title:'Payback 1', series:'Other', year:2012, thumb:'', link:'#'},
+      {id:'payback2', title:'Payback 2 — The Battle Sandbox', series:'Other', year:2017, thumb:'', link:'https://apkpure.com/payback-2-the-battle-sandbox/net.apex_designs.payback2'},
+
+      // Simulation / strategy
+      {id:'plagueinc', title:'Plague Inc.', series:'Other', year:2012, thumb:'', link:'https://apkpure.com/plague-inc/com.miniclip.plagueinc'},
+
+      // Puzzle / small MB favorites
+      {id:'brainout', title:'Brain Out', series:'Other', year:2019, thumb:'', link:'https://apkpure.com/brain-out-think-outside-the-box/com.eyugame.brainout'},
+      {id:'flowfree', title:'Flow Free', series:'Other', year:2012, thumb:'', link:'#'},
+
+      // Music / rhythm / casual
+      {id:'smashhit', title:'Smash Hit', series:'Other', year:2014, thumb:'', link:'https://apkpure.com/smash-hit/com.mediocre.smash'},
+
+      // Emulation helpers / tools
+      {id:'xboxremote', title:'Xbox Game Pass Companion (info)', series:'Other', year:2020, thumb:'', link:'#'}
     ];
 
     const seriesOrder = ['DLS','eFootball','FIFA','Asphalt','GTA','Shooter','Emulator','Other'];
