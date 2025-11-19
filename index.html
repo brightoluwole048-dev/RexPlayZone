@@ -1,73 +1,226 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Rexonix — Downloads</title>
-<meta name="description" content="Rexonix — Download DLS, FIFA, Asphalt, GTA and many more APKs." />
-<meta name="keywords" content="rexonix, dls, dream league soccer, apk, download, fifa, asphalt, gta">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rexonix — Game Hub</title>
+  <meta name="description" content="Rexonix — download DLS, eFootball, FIFA, Asphalt, GTA and more.">
+  <meta name="keywords" content="DLS, Dream League Soccer, eFootball, FIFA, Asphalt, GTA, Rexonix, game download">
 
-<!-- AdSense (your code) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590879537304338"
+  <!-- Google AdSense (leave if you have it) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8590879537304338"
     crossorigin="anonymous"></script>
 
-<style>
-:root{--accent:#2bb6ff;--muted:#9aa6b2;--white:#fff}
-html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--white);background:linear-gradient(180deg,#071226 0%, #0b1722 100%);}
-.wrap{width:94%;max-width:1000px;margin:28px auto;padding-bottom:60px}
-header{display:flex;align-items:center;gap:16px;justify-content:center;flex-direction:column}
-.brand{font-size:36px;font-weight:700;letter-spacing:0.5px}
-.lead{color:var(--muted);text-align:center;margin-top:6px;margin-bottom:18px}
-.search{width:100%;display:flex;gap:10px;align-items:center;margin:0 auto 20px}
-.search input{flex:1;padding:14px 16px;border-radius:10px;border:none;font-size:16px;background:#071e2a;color:var(--white);outline:none;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
-.list{display:flex;flex-direction:column;gap:14px}
-.item{display:flex;gap:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:12px;border-radius:12px;align-items:flex-start}
-.thumb{width:120px;height:120px;border-radius:8px;object-fit:cover;background:#071a2a}
-.meta{flex:1}
-.title{font-weight:700;font-size:18px;margin-bottom:6px;color:var(--white)}
-.desc{color:var(--muted);margin-bottom:10px}
-.actions{display:flex;gap:8px;align-items:center}
-.btn{padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700}
-.btn.primary{background:var(--accent);color:#042026}
-.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)}
-.footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
-.no-results{display:none;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;margin-top:10px;color:var(--muted)}
-@media(max-width:600px){.item{flex-direction:row}.thumb{width:100px;height:100px}}
-</style>
+  <style>
+    :root{
+      --bg1:#0d47a1; --bg2:#1976d2; --card: rgba(255,255,255,0.08);
+      --muted:#cfe8ff; --accent:#ffd54f;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:Inter, system-ui, Arial, sans-serif;
+      background: linear-gradient(160deg,var(--bg1),var(--bg2));
+      color: #fff; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .wrap{max-width:1100px;margin:22px auto;padding:18px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#6b46c1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;box-shadow:0 8px 30px rgba(0,0,0,0.25)}
+    h1{margin:0;font-size:22px}
+    .lead{color:var(--muted);font-size:13px;margin-top:6px}
+
+    /* search */
+    .searchbar{margin-top:16px;display:flex;gap:10px;align-items:center}
+    .searchbar input{
+      flex:1;padding:12px 14px;border-radius:10px;border:0;background:rgba(255,255,255,0.06);color:inherit;font-size:15px}
+    .searchbar button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#000;font-weight:700;cursor:pointer}
+
+    /* grid */
+    .grid{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+    .card{
+      background:var(--card);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:10px;align-items:stretch;
+      transition:transform .14s ease, box-shadow .14s ease; cursor:pointer; text-decoration:none;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.35)}
+    .thumb{
+      width:100%;aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(0,0,0,0.06));
+      display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:var(--muted);
+    }
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .meta{display:flex;flex-direction:column;gap:4px}
+    .title{font-size:14px;margin:0;color:#fff}
+    .sub{font-size:12px;color:var(--muted);margin-top:auto}
+
+    .footer{margin-top:22px;text-align:center;color:rgba(255,255,255,0.65);font-size:13px}
+
+    /* results / no results */
+    .noresults{padding:24px;border-radius:10px;background:rgba(0,0,0,0.18);text-align:center;color:#fff}
+    @media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">Rexonix</div>
-      <div class="lead">Search and download APKs — DLS, FIFA, Asphalt, GTA and more.</div>
+      <div class="logo">RX</div>
+      <div>
+        <h1>Rexonix</h1>
+        <div class="lead">Search & download DLS, eFootball, FIFA, Asphalt, GTA and more.</div>
+      </div>
     </header>
 
-    <div class="search">
-      <input id="q" placeholder="Search games (e.g. DLS, FIFA, Asphalt, GTA)..." oninput="searchGames()" />
+    <div class="searchbar">
+      <input id="q" placeholder="Search games, e.g. dls 2024, asphalt 9, gta" />
+      <button id="clearBtn">Clear</button>
     </div>
 
-    <div id="results" class="list" aria-live="polite"></div>
-    <div id="empty" class="no-results">No game found 😕</div>
+    <div id="grid" class="grid" aria-live="polite"></div>
 
-    <div class="footer">© <span id="year"></span> Rexonix — Replace placeholder APKs with real host links (MediaFire/Mega). Use responsibly.</div>
+    <div id="none" class="noresults" style="display:none;margin-top:14px">
+      No games found — try another keyword.
+    </div>
+
+    <div class="footer">Rexonix • Built with ❤️ • Replace placeholder links with real downloads in script.js</div>
   </div>
 
-<script>
-/*
-  IMPORTANT:
-  - Upload images into: assets/images/
-  - Upload APKs into: assets/apks/
-  - Or replace each apk: value with an external direct download URL (MediaFire / Mega / etc.)
-*/
+  <script>
+    // ---------- GAMES DATA (placeholder links) ----------
+    // Thumbnails: use assets/<id>.png if you upload them; otherwise initials shown.
+    const games = [
+      // DLS 2011 - 2025
+      { id:"dls2011", title:"Dream League Soccer 2011", tag:"dls 2011", thumb:"assets/dls2011.png", link:"#"},
+      { id:"dls2012", title:"Dream League Soccer 2012", tag:"dls 2012", thumb:"assets/dls2012.png", link:"#"},
+      { id:"dls2013", title:"Dream League Soccer 2013", tag:"dls 2013", thumb:"assets/dls2013.png", link:"#"},
+      { id:"dls2014", title:"Dream League Soccer 2014", tag:"dls 2014", thumb:"assets/dls2014.png", link:"#"},
+      { id:"dls2015", title:"Dream League Soccer 2015", tag:"dls 2015", thumb:"assets/dls2015.png", link:"#"},
+      { id:"dls2016", title:"Dream League Soccer 2016", tag:"dls 2016", thumb:"assets/dls2016.png", link:"#"},
+      { id:"dls2017", title:"Dream League Soccer 2017", tag:"dls 2017", thumb:"assets/dls2017.png", link:"#"},
+      { id:"dls2018", title:"Dream League Soccer 2018", tag:"dls 2018", thumb:"assets/dls2018.png", link:"#"},
+      { id:"dls2019", title:"Dream League Soccer 2019", tag:"dls 2019", thumb:"assets/dls2019.png", link:"#"},
+      { id:"dls2020", title:"Dream League Soccer 2020", tag:"dls 2020", thumb:"assets/dls2020.png", link:"#"},
+      { id:"dls2021", title:"Dream League Soccer 2021", tag:"dls 2021", thumb:"assets/dls2021.png", link:"#"},
+      { id:"dls2022", title:"Dream League Soccer 2022", tag:"dls 2022", thumb:"assets/dls2022.png", link:"#"},
+      { id:"dls2023", title:"Dream League Soccer 2023", tag:"dls 2023", thumb:"assets/dls2023.png", link:"#"},
+      { id:"dls2024", title:"Dream League Soccer 2024", tag:"dls 2024", thumb:"assets/dls2024.png", link:"#"},
+      { id:"dls2025", title:"Dream League Soccer 2025", tag:"dls 2025", thumb:"assets/dls2025.png", link:"#"}, 
 
-const games = [
-  {name:"DLS 2024", apk:"assets/apks/dls2024.apk", image:"assets/images/dls24.jpg", desc:"Dream League Soccer 2024 APK"},
-  {name:"DLS 2025", apk:"assets/apks/dls2025.apk", image:"assets/images/dls25.jpg", desc:"Dream League Soccer 2025 APK"},
-  {name:"DLS 2020", apk:"assets/apks/dls2020.apk", image:"assets/images/dls2020.jpg", desc:"Dream League Soccer 2020 APK"},
-  {name:"FIFA Mobile", apk:"assets/apks/fifa_mobile.apk", image:"assets/images/fifa_mobile.jpg", desc:"FIFA Mobile APK"},
-  {name:"eFootball 2024", apk:"assets/apks/efb2024.apk", image:"assets/images/efootball.jpg", desc:"eFootball APK"},
-  {name:"Asphalt 9", apk:"assets/apks/asphalt9.apk", image:"assets/images/asphalt9.jpg", desc:"Asphalt 9: Legends APK"},
-  {name:"CSR Racing 2", apk:"assets/apks/csr2.apk", image:"assets/images/csr2.jpg", desc:"CSR Racing 2 APK"},
-  {name:"Need for Speed", apk:"assets/apks/nfsnl.apk", image:"assets/images/need_for_speed.jpg", desc:"Need for Speed: No Limits APK"},
-  {name:"GTA San Andreas", apk:"assets/apks/gta_sa.apk", image:"assets/images/gta_sa.jpg", desc:"GTA: San Andreas APK"},
-  {name:"GTA V Lite", apk:"assets/apks/g
+      // eFootball / PES years (example range)
+      { id:"pes2010", title:"PES 2010", tag:"pes 2010 efootball", thumb:"assets/pes2010.png", link:"#"},
+      { id:"pes2011", title:"PES 2011", tag:"pes 2011", thumb:"assets/pes2011.png", link:"#"},
+      { id:"pes2012", title:"PES 2012", tag:"pes 2012", thumb:"assets/pes2012.png", link:"#"},
+      { id:"pes2013", title:"PES 2013", tag:"pes 2013", thumb:"assets/pes2013.png", link:"#"},
+      { id:"pes2014", title:"PES 2014", tag:"pes 2014", thumb:"assets/pes2014.png", link:"#"},
+      { id:"pes2015", title:"PES 2015", tag:"pes 2015", thumb:"assets/pes2015.png", link:"#"},
+      { id:"pes2016", title:"PES 2016", tag:"pes 2016", thumb:"assets/pes2016.png", link:"#"},
+      { id:"pes2017", title:"PES 2017", tag:"pes 2017", thumb:"assets/pes2017.png", link:"#"},
+      { id:"pes2018", title:"PES 2018 (eFootball)", tag:"pes 2018 efootball", thumb:"assets/pes2018.png", link:"#"},
+      { id:"pes2019", title:"eFootball PES 2019", tag:"pes 2019", thumb:"assets/pes2019.png", link:"#"},
+      { id:"pes2020", title:"eFootball 2020", tag:"efootball 2020", thumb:"assets/pes2020.png", link:"#"},
+      { id:"pes2021", title:"eFootball 2021", tag:"efootball 2021", thumb:"assets/pes2021.png", link:"#"},
+      { id:"pes2022", title:"eFootball 2022", tag:"efootball 2022", thumb:"assets/pes2022.png", link:"#"},
+      { id:"pes2023", title:"eFootball 2023", tag:"efootball 2023", thumb:"assets/pes2023.png", link:"#"},
+      { id:"pes2024", title:"eFootball 2024", tag:"efootball 2024", thumb:"assets/pes2024.png", link:"#"},
+      { id:"pes2025", title:"eFootball 2025", tag:"efootball 2025", thumb:"assets/pes2025.png", link:"#"}, 
+
+      // Asphalt
+      { id:"asphalt5", title:"Asphalt 5", tag:"asphalt 5", thumb:"assets/asphalt5.png", link:"#"},
+      { id:"asphalt6", title:"Asphalt 6", tag:"asphalt 6", thumb:"assets/asphalt6.png", link:"#"},
+      { id:"asphalt7", title:"Asphalt 7", tag:"asphalt 7", thumb:"assets/asphalt7.png", link:"#"},
+      { id:"asphalt8", title:"Asphalt 8", tag:"asphalt 8", thumb:"assets/asphalt8.png", link:"#"},
+      { id:"asphalt9", title:"Asphalt 9", tag:"asphalt 9", thumb:"assets/asphalt9.png", link:"#"},
+
+      // FIFA
+      { id:"fifa10", title:"FIFA 10", tag:"fifa 10", thumb:"assets/fifa10.png", link:"#"},
+      { id:"fifa11", title:"FIFA 11", tag:"fifa 11", thumb:"assets/fifa11.png", link:"#"},
+      { id:"fifa12", title:"FIFA 12", tag:"fifa 12", thumb:"assets/fifa12.png", link:"#"},
+      { id:"fifa13", title:"FIFA 13", tag:"fifa 13", thumb:"assets/fifa13.png", link:"#"},
+      { id:"fifa14", title:"FIFA 14", tag:"fifa 14", thumb:"assets/fifa14.png", link:"#"},
+      { id:"fifa15", title:"FIFA 15", tag:"fifa 15", thumb:"assets/fifa15.png", link:"#"},
+      { id:"fifa16", title:"FIFA 16", tag:"fifa 16", thumb:"assets/fifa16.png", link:"#"},
+      { id:"fifa17", title:"FIFA 17", tag:"fifa 17", thumb:"assets/fifa17.png", link:"#"},
+      { id:"fifa18", title:"FIFA 18", tag:"fifa 18", thumb:"assets/fifa18.png", link:"#"},
+      { id:"fifa19", title:"FIFA 19", tag:"fifa 19", thumb:"assets/fifa19.png", link:"#"},
+      { id:"fifa20", title:"FIFA 20", tag:"fifa 20", thumb:"assets/fifa20.png", link:"#"},
+      { id:"fifa21", title:"FIFA 21", tag:"fifa 21", thumb:"assets/fifa21.png", link:"#"},
+      { id:"fifa22", title:"FIFA 22", tag:"fifa 22", thumb:"assets/fifa22.png", link:"#"},
+      { id:"fifa23", title:"FIFA 23", tag:"fifa 23", thumb:"assets/fifa23.png", link:"#"},
+      { id:"fifa24", title:"FIFA 24", tag:"fifa 24", thumb:"assets/fifa24.png", link:"#"},
+      { id:"fifa25", title:"FIFA 25", tag:"fifa 25", thumb:"assets/fifa25.png", link:"#"}, 
+
+      // GTA (common popular ones)
+      { id:"gta1", title:"GTA 1 (Classic)", tag:"gta 1", thumb:"assets/gta1.png", link:"#"},
+      { id:"gta2", title:"GTA 2", tag:"gta 2", thumb:"assets/gta2.png", link:"#"},
+      { id:"gta3", title:"GTA III", tag:"gta 3", thumb:"assets/gta3.png", link:"#"},
+      { id:"gta_vc", title:"GTA Vice City", tag:"vice city gta", thumb:"assets/gta_vc.png", link:"#"},
+      { id:"gta_sa", title:"GTA San Andreas", tag:"gta sa", thumb:"assets/gta_sa.png", link:"#"},
+      { id:"gta_iv", title:"GTA IV", tag:"gta 4", thumb:"assets/gta_iv.png", link:"#"},
+      { id:"gta5", title:"GTA V", tag:"gta 5", thumb:"assets/gta5.png", link:"#"}, 
+
+      // shooters & others
+      { id:"codm", title:"Call of Duty Mobile (CODM)", tag:"codm cod mobile", thumb:"assets/codm.png", link:"#"},
+      { id:"pubg", title:"PUBG Mobile", tag:"pubg pubg mobile", thumb:"assets/pubg.png", link:"#"},
+      { id:"freefire", title:"Free Fire", tag:"free fire", thumb:"assets/freefire.png", link:"#"},
+      { id:"criticalops", title:"Critical Ops", tag:"critical ops", thumb:"assets/criticalops.png", link:"#"},
+      { id:"ppsspp", title:"PPSSPP emulator", tag:"ppsspp emulator psp", thumb:"assets/ppsspp.png", link:"#"},
+      { id:"minecraft", title:"Minecraft", tag:"minecraft", thumb:"assets/minecraft.png", link:"#"},
+      { id:"roblox", title:"Roblox", tag:"roblox", thumb:"assets/roblox.png", link:"#"},
+    ];
+
+    // ---------- UI & render ----------
+    const grid = document.getElementById('grid');
+    const q = document.getElementById('q');
+    const noneBox = document.getElementById('none');
+    const clearBtn = document.getElementById('clearBtn');
+
+    function initialsFromTitle(t){
+      return t.split(' ').map(s=>s[0]).slice(0,2).join('').toUpperCase();
+    }
+
+    function render(list){
+      grid.innerHTML = '';
+      if(!list || list.length===0){
+        noneBox.style.display='block';
+        return;
+      }
+      noneBox.style.display='none';
+      for(const g of list){
+        const a = document.createElement('a');
+        a.className='card';
+        a.href = g.link || '#';
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.innerHTML = `
+          <div class="thumb">
+            ${g.thumb ? `<img src="${g.thumb}" alt="${g.title}" onerror="this.style.display='none'">`:''}
+            <div class="initials" style="position:absolute">${ initialsFromTitle(g.title) }</div>
+          </div>
+          <div class="meta">
+            <div class="title">${g.title}</div>
+            <div class="sub">${g.tag}</div>
+          </div>
+        `;
+        grid.appendChild(a);
+      }
+    }
+
+    // initial render
+    render(games);
+
+    // search
+    q.addEventListener('input', ()=>{
+      const v = q.value.trim().toLowerCase();
+      if(!v){ render(games); return; }
+      const parts = v.split(/\s+/).filter(Boolean);
+      const matched = games.filter(g=>{
+        const text = (g.title + ' ' + g.tag).toLowerCase();
+        return parts.every(p => text.includes(p));
+      });
+      render(matched);
+    });
+
+    clearBtn.addEventListener('click', ()=>{
+      q.value=''; render(games);
+    });
+  </script>
+</body>
+    </html>
